@@ -423,4 +423,260 @@ output:
 5
 26.0
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Part ke 7
+
+''Code 1''
+import 'dart:io';
+
+main(List<String> arguments){
+  PersegiPanjang kotak1, kotak2;
+  double luasKotak1;
+
+  kotak1 = new PersegiPanjang();
+  kotak1.setPanjang(2);
+  kotak1.lebar = -3;
+
+  kotak2 = PersegiPanjang();
+  kotak2.setPanjang(double.tryParse(stdin.readLineSync()));
+  kotak2.lebar = double.tryParse(stdin.readLineSync());
+
+  luasKotak1 = kotak1.luas;
+
+  print(luasKotak1 + kotak2.luas);
+  print(kotak1.lebar);
+}
+
+output: 
+1
+1
+7.0
+3.0
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+part ke 8
+
+''Code 1''
+import 'package:belajar_inherit/monster.dart';
+import 'package:be;ajar_inherit/monster_kecoa.dart';
+import 'package:belajar_inherit/monster_ubur_ubur.dart';
+
+main(List<String> arguments) async {
+  Hero h = Hero();
+  Monster monster = MonsterUburUbur();
+  MonsterUburUbur u = MonsterUburUbur();
+  List<Monster> monsters = [];
+
+  monsters.add(MonsterUburUbur());
+  monsters.add(MonsterKecoa());
+  monsters.add(MonsterUburUbur());
+
+  print((monster as MonsterUburUbur).swim());
+  
+}
+
+output:
+woosh.. woosh..
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+part ke 9
+
+''Code 1''
+import 'package:belajar_inherit/monster.dart';
+import 'package:be;ajar_inherit/monster_kecoa.dart';
+import 'package:belajar_inherit/monster_ubur_ubur.dart';
+
+main(List<String> arguments) async {
+  List<Monster> monsters = [];
+
+  monsters.add(MonsterUburUbur());
+  monsters.add(MonsterKecoa());
+  monsters.add(MonsterUcoa());
+
+  for ( Monster m in monsters){
+    if (m is FlyingMonster) {
+      print(m as FlyingMonster).fly();
+    }
+  }
+  
+}
+
+output:
+Syuuung...
+Terbang terbang melayang 
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+part ke 10
+
+''Code 1''
+import 'package:belajar_inherit/monster.dart';
+import 'package:be;ajar_inherit/monster_kecoa.dart';
+import 'package:belajar_inherit/monster_ubur_ubur.dart';
+import 'package:belajar_inherit/knight';
+import 'package:belajar_inherit/flying_monster';
+import 'package:belajar_inherit/ucoa';
+
+
+main(List<String> arguments) async {
+  List<Monster> monsters = [];
+
+ knight k = knight();
+  print(k.drink());
+
+  // monsters.add(MonsterUburUbur());
+  // monsters.add(MonsterKecoa());
+  // monsters.add(MonsterUcoa());
+
+  // for ( Monster m in monsters){
+  //   if (m is FlyingMonster) {
+  //     print(m as FlyingMonster).fly();
+  //   }
+  // }
+  
+}
+
+output :
+Gluk.. Gluk.. Gluk.. 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+part ke 11
+
+''Code 1''  
+import 'dart:io';
+
+import 'person.dart';
+import 'student.dart';
+
+void main (List<String> arguments) {
+  // var input = stdin.readLineSync();
+
+  Person p = Student();
+
+  print(p.name);
+}
+
+output :
+constructor person
+student baru
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+part ke 12
+
+''Code 1''
+import 'package:belajar_ignore_parameter/ignore.dart';
+
+void main(List<String> arguments){
+  var p = Person('David', doingHobby: (_) {
+    print('Swimming in the pool');
+  });
+
+  p.takeARest();
+}
+
+// void davidsHobby(String name){
+//   print('$name is swimming');
+// }
+
+output:
+Swimming in the pool
+Exited
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+part ke 13
+
+''Code 13''
+import 'package:belajar_static_keyword/static_keyword.dart';
+
+void main(List<String> arguments){
+  var g { Person('David', 170);
+
+  print(Person.maxAge);
+}
+
+output:
+150
+Exited
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+part ke 14
+
+''Code 1''
+void main(List<String> arguments) async {
+  var p = Person();
+
+  print('job 1');
+  print('job 2');
+  p.getDataAsync().then((_) {
+    print('job 3 : ' + p.name);
+  });
+  print('job 4');
+}
+
+class Person {
+  String name = 'default name';
+
+  void getData() {
+    name = 'Joko';
+    print('get data [done]');
+  }
+}
+
+output:
+job 1
+job 2
+jpb 4
+get data [done]
+job 3 : Joko
+Exited
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+part ke 15
+
+''Code 1''
+const pi = 3.14;
+
+void main(List<String> arguments) {
+  var a = const ConstClass(number: 5);
+  var b = const ConstClass(number: 5);
+
+  print(identical(a,b));
+  print(pi);
+}
+
+class RegularClass {
+  final int number;
+  static const myConst = 12;
+
+  RegularClass({this.number}){
+    const anotherConst = 14;
+    print(anotherConst);
+  }
+}
+
+class ConstClass{
+  final int number;
+
+  const ConstClass({this.number});
+}
+
+output: 
+true
+Exited
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+part ke 16
+
+''Code''
+
 
