@@ -196,4 +196,231 @@ output :
 11 - 10
 11 - 11
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Part ke 4
+
+''Code 1''
+import 'dart:io';
+
+double luas_segiempat( double panjang, double lebar ){
+  return panjang * lebar; 
+}
+
+void sapa_penonton(){
+  print ('hello penonton');
+}
+
+main(List<String> arguments){
+  double p, l, luas;
+
+  p = double.tryParse(stdin.readLineSync());
+  l = double.tryParse(stdin.readLineSync());
+
+  print(luas_segiempat(p, l));
+}
+
+output : 
+10
+20
+200.0
+
+''Code 2''
+import 'dart:io';
+
+String say( Stirng from, String message, { String to, String appName}) {
+  return from + ' say ' + message + (( to != null ) ? ' to ' + to : '' ) + (( appName != null ) ? 'via' + appName : '');
+}
+
+main(List<String> arguments){
+  print(say('Johny','Hello', appName : 'whatsapp'));
+  print(say('Johny','Hello', 'Doloris'));
+}
+
+output:
+Johny say Hello via whatsapp
+Johny say Hello to Doloris
+
+''Code 3''
+import 'dart:io';
+
+double luas_segiempat(double panjang, double lebar ) => panjang *lebar;
+
+int doMathOperator(int number1, int number2, Function operator ){
+  return operator(number1, number2);
+}
+
+main(List<String> arguments){
+  Function f;
+  f = luas_segiempat;
+  print(say('Johny','Hello', appName : 'whatsapp'));
+  print(say('Johny','Hello', 'Doloris'));
+  print(f(6.0, 3.0));
+  print(doMathOperator(1, 2 (a, b) => a * b));
+}
+
+output :
+Johny say Hello via whatsapp
+Johny say Hello to Doloris
+2
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Hari ke 5
+
+''Code 1''
+import 'dart:io';
+
+main(List<String> arguments){
+  List<int> myList = [];
+  List<int> list = [1, 2, 3];
+
+  myList.add(10);
+  myList.addAll(list);
+  myList.insert(1, 20);
+  myList.insertAll(3, [30, 40, 20]);
+  // myList.removeRange(1, 4);
+
+  myList.forEach((bilangan){
+    print(bilangan);
+  });
+
+}
+
+output:
+10
+40
+20
+2
+3
+
+''Code 2''
+import 'dart:io';
+
+main(List<String> arguments){
+  List<int> myList = [1,2 ,3,4, 5, 6, 7];
+  List<int> list = [1, 2, 3];
+
+  myList.removeRange(1, 4);
+
+  myList.forEach((bilangan){
+    print(bilangan);
+  });
+
+}
+
+output:
+1
+5
+6
+7
+
+''Code 3''
+import 'dart:io';
+
+main(List<String> arguments){
+  List<int> myList = [7, ,6 ,1, 4, 3, 6, 2];
+  List<int> list = [1, 2, 3];
+
+  if (myList.every((number) => number % 2 != 0)) {
+    print('Semua ganjil');
+  } else {
+    print('tidak semua ganjil');
+  }
+
+  myList.forEach((bilangan) {
+    print(bilangan);
+  }); 
+}
+
+output:
+7
+1
+6
+4
+3
+6
+2
+
+''Code 4''
+import 'dart:io';
+
+main(List<String> arguments){
+  List<int> myList = [1,1,6,4,3,6,2];
+  List<int> list = [];
+
+  list = myList.map((number) => 'angka ' + number.toString()).toList();
+
+  list.forEach((str) {
+    print(str);
+  }); 
+}
+
+output:
+angka 1
+angka 1
+angka 6
+angka 4
+angka 3
+angka 6
+angka 2
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Part ke 6
+
+''Code 1''
+import 'dart:io';
+
+main(List<String> arguments){
+  PersegiPanjang kotak1, kotak2;
+  print(kotak1.toString());
+}
+
+class PersegiPanjang{
+  double panjang;
+  double lebar;
+
+  double hitungLuas(){
+    return this.panjang * lebar;
+  }
+}
+
+output :
+null
+
+''Code 2''
+import 'dart:io';
+
+main(List<String> arguments){
+  PersegiPanjang kotak1, kotak2;
+  double luasKotak1;
+
+  kotak1 = new PersegiPanjang();
+  kotak1.panjang = 2;
+  kotak1.lebar = 3;
+
+  kotak2 = PersegiPanjang();
+  kotak2.panjang = double.tryParse(stdin.readLineSync());
+  kotak2.lebar = double.tryParse(stdin.readLineSync());
+
+  luasKotak1 = kotak1.hitungLuas();
+
+  print(luasKotak1 + kotak2.hitungLuas());
+}
+
+class PersegiPanjang{
+  double panjang;
+  double lebar;
+
+  double hitungLuas(){
+    return this.panjang * lebar;
+  }
+}
+
+output:
+4
+5
+26.0
+
 
