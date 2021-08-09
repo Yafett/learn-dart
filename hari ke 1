@@ -1,5 +1,7 @@
 Rangkuman Belajar PBO
 
+part ke 1
+
 Code 1 Hello World
 
 void main(List<String> arguments) {
@@ -39,7 +41,7 @@ output :
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Hari ke 2
+part ke 2
 
 ''Code 1''
 import 'dart:io';
@@ -126,3 +128,72 @@ output :
 satu
 4
 bilangan lain
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+part ke 3
+
+''Code 1 for ''
+import 'dart:io';
+
+main(List<String> arguments) {
+  for (int counter = 0; counter < 5; counter += 1) {
+    print('halo');
+  }
+}
+
+output : 
+halo
+halo
+halo
+halo
+halo
+
+''Code 2 while ''
+import 'dart:io';
+
+main(List<String> arguments) {
+  int i = 0;
+  while (i < 5) {
+    print('halo ke ' + i.toString());
+    i += 1;
+  }
+}
+
+output:
+halo ke 0
+halo ke 1
+halo ke 2
+halo ke 3
+halo ke 4
+
+''Code 3''
+  int x = 5;
+  do {
+    print('dododo ke ' + x.toString());
+    x += 1;
+  } while (x < 5);
+}
+'
+output :
+dododo ke 5
+
+''Code 4''
+import 'dart:io';
+
+main(List<String> arguments) {
+  int a, b;
+  a = 10;
+  b = a++;
+  print(a.toString() + ' - ' + b.toString());
+
+  a = 10;
+  b = ++a;
+  print(a.toString() + ' - ' + b.toString());
+}
+
+output :
+11 - 10
+11 - 11
+
+
