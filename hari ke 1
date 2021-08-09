@@ -36,3 +36,93 @@ main(List<String> arguments) {
 output : 
 20
 30
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Hari ke 2
+
+''Code 1''
+import 'dart:io';
+
+main(List<String> arguments) {
+  int number = int.tryParse(stdin.readLineSync());
+
+  if (number > 0) {
+    print('positif');
+  } else if (number < 0) {
+    print('negatif');
+  } else {
+    print('nol');
+  }
+}
+
+output:
+1 
+positif
+-1
+negatif
+0
+nol
+
+''Code 2''
+import 'dart:io';
+
+main(List<String> arguments) {
+  int number = int.tryParse(stdin.readLineSync());
+  String output;
+
+  output = (number > 0) ? 'positif' : 'negatif atau nol';
+
+  print(output);
+}
+
+output :
+1
+poisitif
+-2
+negatif atau nol
+
+''Code 3''
+import 'dart:io';
+
+main(List<String> arguments) {
+  int number = int.tryParse(stdin.readLineSync());
+  String output;
+
+  print((number > 0) ? number : number * -1);
+}
+
+output : 
+1
+1
+-5
+5
+
+''Code 4''
+import 'dart:io';
+
+main(List<String> arguments) {
+  int number = int.tryParse(stdin.readLineSync());
+
+  switch (number) {
+    case 0:
+      print('nol');
+      break;
+    case 1:
+      print(number);
+      print('satu');
+      break;
+    case 2:
+      print('dua');
+      break;
+    default:
+      print('bilangan lain');
+  }
+}
+
+output :
+1
+1
+satu
+4
+bilangan lain
