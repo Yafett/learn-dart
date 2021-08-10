@@ -382,7 +382,7 @@ class PersegiPanjang{
   double lebar;
 
   double hitungLuas(){
-    return this.panjang * lebar;
+    return this.panjang * lebar;  
   }
 }
 
@@ -427,10 +427,41 @@ output:
 
 Part ke 7
 
-''Code 1''
-import 'dart:io';
+''Code PersegiPanjang''
+class PersegiPanjang {
+  double _panjang;
+  double _lebar;
 
-main(List<String> arguments){
+  void set lebar(double value) {
+    if (value < 0) {
+      value *= -1;
+    }
+    _lebar = value;
+  }
+
+  void setPanjang(double value) {
+    if (value < 0) {
+      value *= -1;
+    }
+    _panjang = value;
+  }
+
+  double get lebar {
+    return _lebar;
+  }
+
+  double getPanjang() {
+    return _panjang;
+  }
+
+  double get luas => _panjang * _lebar;
+}
+
+''Code main''
+import 'dart:io';
+import 'package:dart_application_1/persegi_panjang.dart';
+
+main(List<String> arguments) {
   PersegiPanjang kotak1, kotak2;
   double luasKotak1;
 
