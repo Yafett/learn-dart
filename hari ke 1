@@ -490,26 +490,30 @@ output:
 part ke 8
 
 ''Code 1''
-import 'package:belajar_inherit/monster.dart';
-import 'package:be;ajar_inherit/monster_kecoa.dart';
-import 'package:belajar_inherit/monster_ubur_ubur.dart';
+import 'dart:io';
 
-main(List<String> arguments) async {
+import 'package:dart_application_1/hero.dart';
+import 'package:dart_application_1/monster.dart';
+import 'package:dart_application_1/monster_kecoa.dart';
+import 'package:dart_application_1/monster_ubur_ubur.dart';
+
+main(List<String> args) async {
   Hero h = Hero();
   Monster monster = MonsterUburUbur();
-  MonsterUburUbur u = MonsterUburUbur();
   List<Monster> monsters = [];
 
   monsters.add(MonsterUburUbur());
   monsters.add(MonsterKecoa());
-  monsters.add(MonsterUburUbur());
+  monsters.add(Monster());
 
   print((monster as MonsterUburUbur).swim());
-  
-}
 
-output:
-woosh.. woosh..
+  // for (Monster m in monsters) {
+  //   if (m is MonsterUburUbur) {
+  //     print(m.swim());
+  //   }
+  // }
+}
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
